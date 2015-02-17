@@ -32,6 +32,11 @@ public int bookcopydate()
 return copydate;
 }
 
+/* DPW: You are missing the setters for the Books EX:
+public void setTitle(String title){
+    this.title = title;
+}
+*/
 
 
 

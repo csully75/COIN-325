@@ -10,6 +10,7 @@ public class Bookshelf {
 		
 	
 
+/* DPW This function should return whether or not there are any books.*/
 	public static String nobooks(){
 		String nothing = "There are no books in the bookshelf";
 		return nothing;
@@ -18,6 +19,7 @@ public class Bookshelf {
 	
 		
 	
+/* DPW: Normally we call the function getBook(int num), but this is fine for now.*/
 	public static String numBooks(int num1){
 		String str = null;
 		if (num1 <= 5){
