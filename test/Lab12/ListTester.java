@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package lab12;
 
-package Lab12;
-
+import java.util.List;
+import lab12.SlinkedList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,7 +16,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author csullivan156711
+ * @author Sully
  */
 public class ListTester {
     
@@ -37,19 +38,13 @@ public class ListTester {
     @After
     public void tearDown() {
     }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
-      @Test 
+  @Test 
      public void SLinkedListTest() { 
-         listTest(new SLinkedList()); 
+      SlinkedList  listTest = new SlinkedList(); 
+      ArrayList AlistTest = new ArrayList();
   } 
-      
      public void listTest(List list) { 
-        list.add(new Integer(10)); 
+        list.add(10); 
         list.add(new Integer(11)); 
        list.add(new Integer(16)); 
         
@@ -59,6 +54,21 @@ public class ListTester {
        assertTrue(list.size() == 5); 
          
          assertTrue(list.get(3).equals(new Integer(16))); 
-
 }
+     public void AlistTest(List list){
+     list.add(10); 
+        list.add(new Integer(11)); 
+       list.add(new Integer(16)); 
+        
+        assertTrue(list.size() == 3); 
+        list.add(new Integer(11)); 
+        list.add(new Integer(16)); 
+       assertTrue(list.size() == 5); 
+         
+         assertTrue(list.get(3).equals(new Integer(16))); 
+     
+     
+     
+     
+     }
 }

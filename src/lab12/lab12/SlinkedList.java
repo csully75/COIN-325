@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package lab12;
 
 /**
  *
- * @author csullivan156711
+ * @author Sully
  */
-public class SLinkedList implements List{
-    Node head, tail; 
+public class SlinkedList implements List {
+  Node head, tail; 
 private int numsize;
     @Override 
     public Object get(int index) { 
@@ -41,7 +40,7 @@ private int numsize;
                 System.err.println("Invalid state only one is null: head, tail"); 
            } 
        } 
-   } 
+     }
 
  
     @Override 
@@ -62,3 +61,4 @@ private int numsize;
         Object value; 
          Node next; 
      } }
+
