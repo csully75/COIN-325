@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkgfinal.project;
+package FinalProject;
 
 import javax.swing.JFrame;
 
@@ -21,7 +21,7 @@ public class FinalProject {
         JFrame frame = new JFrame ("Intersellar login");
         frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
         
-      frame.getContentPane().add(new submitpanel());
+      frame.getContentPane().add(new Gamepanel());
         
         frame.pack();
         frame.setVisible(true); 
