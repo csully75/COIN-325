@@ -55,8 +55,8 @@ class submitpanel extends JPanel{
         TextBox.setBackground(Color.lightGray);
         TextBox.add(Us1);
         TextBox.add(user2);
-        TextBox.add(pass);
-        TextBox.add(pass2);
+       // TextBox.add(pass);
+       // TextBox.add(pass2);
         
         wel = new JPanel();
         wel.setPreferredSize(new Dimension (400, 40));
@@ -84,9 +84,9 @@ class submitpanel extends JPanel{
             if (event.getSource() == Create)
             {
             name = JOptionPane.showInputDialog("Enter your User Name");
-            numstr = JOptionPane.showInputDialog("Enter a four digit number"
-                    + " for your Password");
-            password = Integer.parseInt(numstr);
+           // numstr = JOptionPane.showInputDialog("Enter a four digit number"
+                //    + " for your Password");
+           // password = Integer.parseInt(numstr);
            // Database(name, password);
             //pasword may need to be used later
             
@@ -95,11 +95,13 @@ class submitpanel extends JPanel{
             if (event.getSource() == Login)
             {
                 text = user2.getText();
-         if (name.equals(text));{
-                text = pass2.getText();
-            if(numstr.equals(text));{System.out.println("you did it!");}
-             // super.frame.getContentPane().add(new Gamepanel());
-            }
+        try{
+         if (true == name.equals(text)){
+             FinalProject.won  = true; 
+             FinalProject.main(null);
+            }}
+            catch (NullPointerException exception){
+             JOptionPane.showMessageDialog(null, "Not a registered User");}
             }
     
     }
