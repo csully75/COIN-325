@@ -1,0 +1,15 @@
+Changes made
+The changes I made for the User Login (submitpanel) was I took away the password variable, password 
+textbox, and password JLabel, because I would have to create a file to write into and I didn’t have 
+time to write it out. I did add a JLabel just above the username login called welcome and I also 
+added a ButtonListener class.
+
+I also made changes to the game GUI (Gamepanel) I added the variables WIDTH, HEIGHT, JUMP, timer, 
+timer2, IMAGE¬¬_SIZE, DELAY1, DELAY2, point1, ship, currentImage, flagship, x, y, xy, xy2, missy, 
+missy2, missle1, missle2, and rightbound. I deleted the two JLabels for an easier layout. 
+
+
+For the main class (Final Project) I added a won variable to keep up with which Frame to display. 
+I added one class IntrruptedExeption to catch any exceptions that might happen with the timer and
+ I deleted the highscore class, because I didn’t have enough time for it.  
+
