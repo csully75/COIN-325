@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package lab17;
 
 /**
  *
- * @author csullivan156711
+ * @author Sully
  */
 public interface Queue<T> { 
    public void enqueue(T element); 
@@ -19,4 +18,3 @@ public interface Queue<T> {
     @Override 
     public String toString(); 
  } 
-

@@ -3,13 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package lab17;
 
 /**
  *
- * @author csullivan156711
- * @param <T>
+ * @author Sully
  */
 public class CircularArrayQueue<T> implements Queue<T> { 
     private final static int DEFAULT_CAPACITY = 100; 
@@ -41,16 +39,27 @@ public class CircularArrayQueue<T> implements Queue<T> {
  
      @Override 
     public T dequeue() throws EmptyCollectionException { 
-       
-        
-        
+         if (isEmpty()) {
+            throw new EmptyCollectionException();
+        }
+       T result = mQueue[mFront];
+		mQueue[mFront] = null;
+		mFront = (mFront + 1) % mQueue.length;
+
+		mCount--;
+
+		return result;
         
     } 
  
  
      @Override 
      public T first() throws EmptyCollectionException { 
-         mFront = (mRear+1) -  mCount; 
+        if (isEmpty()) {
+            throw new EmptyCollectionException();
+          }
+        
+         //mFront = (mRear+1) -  mCount; 
          return mQueue[mFront]; 
    
      } 
@@ -58,9 +67,9 @@ public class CircularArrayQueue<T> implements Queue<T> {
  
      @Override 
      public boolean isEmpty() { 
-         if(mCount == 0)
-             return true;
-         else return false; 
+         if(mCount == 0){
+             return true;}
+         else {return false; }
      } 
  
  
@@ -70,4 +79,5 @@ public class CircularArrayQueue<T> implements Queue<T> {
      } 
       
  } 
+
 

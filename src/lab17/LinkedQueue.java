@@ -3,63 +3,69 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package lab17;
 
 /**
  *
- * @author csullivan156711
+ * @author Sully
  */
-public class LinkedQueue<T> implements Queue<T>{ 
-     private int mCount; 
-   private LinkedNode<T> mHead, mTail; 
+public class LinkedQueue<T> implements Queue<T>{
+    private int mCount;
+    private LinkedNode<T> mHead, mTail;
     
-    public LinkedQueue () { 
-        mCount = 0; 
-         mHead = mTail = null; 
+    public LinkedQueue () {
+        mCount = 0;
+        mHead = mTail = null;
+    }
+    
+    @Override
+    public void enqueue(T element) {
+        LinkedNode<T> node = new LinkedNode<T>();
+        
+        node.setElement(element);
+        
+        if (mHead == null) {
+            mHead = node;
+        } else {
+            mTail.setNext(node);
+        }
+        
+        mTail = node;
+        mCount++;
+    }
+
+    @Override
+    public T dequeue() throws EmptyCollectionException {
+       if ( mHead == null ) {
+            throw new EmptyCollectionException();
+        }
+        T result = mHead.getElement();
+        mHead = mHead.getNext();
+        mCount--;
+        
+        return result;
+    }
+
+    @Override
+    public T first() throws EmptyCollectionException {
+        if ( mHead == null ) {
+            throw new EmptyCollectionException();
+        }
+        
+        return mHead.getElement(); 
+    }
+
+    @Override
+    public boolean isEmpty() {
+       if(mHead== null){
+       return true;
+       }
+       else return false; 
     } 
-     
-    @Override 
-     public void enqueue(T element) { 
-        LinkedNode<T> node = new LinkedNode<T>(); 
-         
-         node.setElement(element); 
-         
-        if (mHead == null) { 
-            mHead = node; 
-        } else { 
-            mTail.setNext(node); 
-       } 
-       
-        mTail = node; 
-        mCount++; 
-   } 
+    
 
- 
-     @Override 
-     public T dequeue() throws EmptyCollectionException { 
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates. 
-     } 
- 
- 
-     @Override 
-     public T first() throws EmptyCollectionException { 
-         return (T) mHead; 
-    } 
-
- 
-     @Override 
-     public boolean isEmpty() { 
-         if (mHead == null)
-             return true;
-                     else 
-             return false;
-     } 
- 
- 
-     @Override 
-     public int size() { 
-         return mCount; 
-     } 
- } 
-
+    @Override
+    public int size() {
+       return mCount; 
+    }
+}

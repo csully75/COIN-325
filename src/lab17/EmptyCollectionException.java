@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package lab17;
 
 /**
  *
- * @author csullivan156711
+ * @author Sully
  */
 public class EmptyCollectionException extends Exception {
+
+  
+
+   
     
 }
