@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package FinalProject;
 
 import javax.swing.*;
@@ -28,8 +29,7 @@ public class Gamepanel extends JPanel {
     private Point point1 = null, point2 = null ; 
     
     private ImageIcon ship, currentImage, flagship;
-    private int x, y, xy,xy2,missx, missy, missy2; 
-   
+    private int x, y, xy,xy2,missx, missy, missy2,again1; 
     private boolean missle = false, missle2 = true, rightbound = false;
 
 public Gamepanel(){
@@ -81,9 +81,25 @@ missle = false;
 if (x +22 > xy && x + 22 < xy + 40){
     timer.stop();
     timer2.stop();
-JOptionPane.showConfirmDialog(null, " You Won! Want to play again?");
- FinalProject.won  = true; 
-   FinalProject.main(null);
+again1 = JOptionPane.showConfirmDialog(null, " You Won! Want to play again?");
+ if(again1 == JOptionPane.YES_OPTION){
+FinalProject.won  = true; 
+FinalProject.main(null);
+ }
+ if(again1 == JOptionPane.NO_OPTION)
+ {
+     FinalProject.won  = false; 
+     FinalProject.end  = false; 
+FinalProject.main(null);
+ }
+ if(again1 == JOptionPane.CANCEL_OPTION)
+ {
+       FinalProject.won  = false; 
+     FinalProject.end  = false; 
+ FinalProject.main(null);
+ }
+ 
+ 
 }
 
 }
