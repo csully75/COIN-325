@@ -11,9 +11,12 @@ import java.util.LinkedList;
 /**
  *
  * @author csullivan156711
+ * @param <K>
+ * @param <V>
  */
 public class HashLinkedChaining<K, V> implements Hash<K,V> { 
-    private Object[] mTable; 
+    private final Object[] mTable; 
+    private int mCount; 
       
      HashLinkedChaining() { 
          mTable = (new Object[2]); 
@@ -31,7 +34,7 @@ public class HashLinkedChaining<K, V> implements Hash<K,V> {
          
          LinkedList<HashNode<K,V>> list = (LinkedList<HashNode<K,V>>) 
                  mTable[Math.abs(key.hashCode()) % mTable.length]; 
-          
+          mCount++;
          list.add(new HashNode(key, value)); 
      } 
 
@@ -45,15 +48,19 @@ public class HashLinkedChaining<K, V> implements Hash<K,V> {
         
        LinkedList<HashNode<K,V>> list = (LinkedList<HashNode<K,V>>) 
                  mTable[Math.abs(key.hashCode()) % mTable.length]; 
-         
-        ret = list.getFirst().getValue(); 
-         
-        return ret; 
+       ret = list.getFirst().getValue();
+         for(int i = 0; i < list.size() ;i++){
+           if(key.equals(list.get(i).getKey()))
+               ret = (V) list.get(i).getValue();
+       }
+       return ret; 
+
      } 
  
  
      @Override 
    public int size() { 
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates. 
+      
+       return mCount; 
   } 
 }
